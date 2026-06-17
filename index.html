@@ -14,6 +14,8 @@
         --pink: #d83a79;
         --purple: #806284;
         --green: #0b8e22;
+        --yp-yellow: #ffcb05;
+        --yp-black: #000000;
       }
 
       * {
@@ -245,8 +247,8 @@
       }
 
       .pin {
-        color: var(--pink);
-        font-size: 12px;
+        width: 14px;
+        height: 14px;
       }
 
       .clock {
@@ -266,6 +268,39 @@
         font-size: 10px;
         line-height: 12px;
         font-weight: 700;
+      }
+
+      .closed-now {
+        align-self: flex-start;
+        margin-top: 2px;
+        margin-bottom: 6px;
+        padding: 1px 4px 0;
+        border: 1px solid #cc0000;
+        border-radius: 2px;
+        color: #cc0000;
+        background: #ffffff;
+        font-size: 10px;
+        line-height: 12px;
+        font-weight: 700;
+      }
+
+      .check-hours {
+        align-self: flex-start;
+        margin-top: 2px;
+        margin-bottom: 6px;
+        padding: 1px 4px 0;
+        border: 1px solid var(--yellow);
+        border-radius: 2px;
+        color: #000000;
+        background: #ffffff;
+        font-size: 10px;
+        line-height: 12px;
+        font-weight: 700;
+      }
+
+      .stars.empty {
+        color: #c8c8c8;
+        text-shadow: none;
       }
 
       .phone {
@@ -320,6 +355,33 @@
         white-space: nowrap;
       }
 
+      /* Designs V2 — tick badge replaces tooltip icon */
+      .designs-v2 .listing {
+        position: relative;
+      }
+
+      .tick-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--yp-yellow);
+        border: 1px solid #e6b800;
+        color: var(--yp-black);
+        font-size: 10px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: help;
+      }
+
+      .designs-v2 .paid-listing .listing-title {
+        padding-right: 20px;
+      }
+
       @media (max-width: 760px) {
         .page {
           width: 100%;
@@ -356,6 +418,128 @@
   </head>
   <body>
     <main class="page">
+
+      <!-- ═══════════════════════════════════════════════
+           DESIGNS V2
+      ════════════════════════════════════════════════ -->
+      <div class="page-heading">
+        <h1>Designs V2</h1>
+      </div>
+
+      <section class="widget designs-v2" aria-label="Yellow Pages Australia paid and free listings">
+        <header class="header">
+          <div class="brand">
+            <img
+              class="logo"
+              src="https://i3.ypcdn.com/ypau/images/logos/ypau_site_logo.svg"
+              alt="Yellow Pages"
+            />
+            <div class="brand-copy">
+              <div class="brand-title">Yellow Pages Australia</div>
+              <div class="brand-subtitle">Paid and Free Listings</div>
+            </div>
+          </div>
+          <div class="result-count">6 results</div>
+        </header>
+
+        <section class="results" aria-label="Paid and free listing results">
+          <article class="listing paid-listing">
+            <span class="tick-badge" aria-label="Paid, Verified Listing" title="Paid, Verified Listing">✓</span>
+            <div class="listing-title">
+              <h2>Melbourne Master Plumbing</h2>
+            </div>
+            <div class="category">Plumbing Services</div>
+            <div class="rating">
+              <span class="stars" aria-label="4.8 stars">★★★★</span>
+              <span class="score">4.8</span>
+            </div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Fitzroy VIC</span></div>
+            <div class="detail"><span class="clock">◷</span><span>Mon–Sat 7am–6pm</span></div>
+            <div class="open-now">OPEN NOW</div>
+            <div class="phone">03 9123 4567</div>
+            <button class="website">View Listing</button>
+          </article>
+
+          <article class="listing paid-listing">
+            <span class="tick-badge" aria-label="Paid, Verified Listing" title="Paid, Verified Listing">✓</span>
+            <div class="listing-title">
+              <h2>AquaFix Plumbing Co.</h2>
+            </div>
+            <div class="category">Plumbing Services</div>
+            <div class="rating">
+              <span class="stars empty" aria-label="Not yet rated">☆☆☆☆☆</span>
+              <span class="score">Not yet rated</span>
+            </div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Richmond VIC</span></div>
+            <div class="detail"><span class="clock">◷</span><span>Mon–Fri 8am–5pm</span></div>
+            <div class="closed-now">CLOSED NOW</div>
+            <div class="phone">03 9234 5678</div>
+            <button class="website">View Listing</button>
+          </article>
+
+          <article class="listing paid-listing">
+            <span class="tick-badge" aria-label="Paid, Verified Listing" title="Paid, Verified Listing">✓</span>
+            <div class="listing-title">
+              <h2>Rapid Response Plumbing</h2>
+            </div>
+            <div class="category">Emergency Plumbing</div>
+            <div class="rating">
+              <span class="stars" aria-label="4.9 stars">★★★★</span>
+              <span class="score">4.9</span>
+            </div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Collingwood VIC</span></div>
+            <div class="detail"><span class="clock">◷</span><span>24/7 Emergency</span></div>
+            <div class="check-hours">CHECK HOURS</div>
+            <div class="phone">03 9345 6789</div>
+            <button class="website">View Listing</button>
+          </article>
+
+          <article class="listing">
+            <div class="listing-title">
+              <h2>City Pipe Solutions</h2>
+            </div>
+            <div class="category">Plumbing Services</div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Carlton VIC</span></div>
+            <div class="detail"><span class="clock">◷</span><span>Mon–Sat 8am–5pm</span></div>
+            <div class="phone">03 9456 7890</div>
+            <button class="website">View Listing</button>
+          </article>
+
+          <article class="listing">
+            <div class="listing-title">
+              <h2>Inner North Plumbing</h2>
+            </div>
+            <div class="category">Plumbing Services</div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Brunswick VIC</span></div>
+            <div class="detail"><span class="clock">◷</span><span>Mon–Fri 9am–5pm</span></div>
+            <div class="phone">03 9567 8901</div>
+            <button class="website">View Listing</button>
+          </article>
+
+          <article class="listing">
+            <div class="listing-title">
+              <h2>Southbank Pipe Repairs</h2>
+            </div>
+            <div class="category">Pipe Repairs</div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Southbank VIC</span></div>
+            <div class="detail"><span class="clock">◷</span><span>Mon–Fri 8am–4pm</span></div>
+            <div class="phone">03 9678 9012</div>
+            <button class="website">View Listing</button>
+          </article>
+        </section>
+
+        <footer class="footer">
+          <a class="all-link" href="#">View all on Yellow Pages →</a>
+        </footer>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           DESIGNS V1
+      ════════════════════════════════════════════════ -->
+      <div class="page-heading">
+        <h1>Designs V1</h1>
+      </div>
+
       <div class="page-heading">
         <h1>Default - All Paid Listings - Style Version 1</h1>
       </div>
@@ -393,7 +577,7 @@
               <span class="stars" aria-label="4.8 stars">★★★★</span>
               <span class="score">4.8</span>
             </div>
-            <div class="detail"><span class="pin">●</span><span>Fitzroy VIC</span></div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Fitzroy VIC</span></div>
             <div class="detail"><span class="clock">◷</span><span>Mon–Sat 7am–6pm</span></div>
             <div class="open-now">OPEN NOW</div>
             <div class="phone">03 9123 4567</div>
@@ -416,7 +600,7 @@
               <span class="stars" aria-label="4.6 stars">★★★★</span>
               <span class="score">4.6</span>
             </div>
-            <div class="detail"><span class="pin">●</span><span>Richmond VIC</span></div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Richmond VIC</span></div>
             <div class="detail"><span class="clock">◷</span><span>Mon–Fri 8am–5pm</span></div>
             <div class="open-now">OPEN NOW</div>
             <div class="phone">03 9234 5678</div>
@@ -439,7 +623,7 @@
               <span class="stars" aria-label="4.9 stars">★★★★</span>
               <span class="score">4.9</span>
             </div>
-            <div class="detail"><span class="pin">●</span><span>Collingwood VIC</span></div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Collingwood VIC</span></div>
             <div class="detail"><span class="clock">◷</span><span>24/7 Emergency</span></div>
             <div class="open-now">OPEN NOW</div>
             <div class="phone">03 9345 6789</div>
@@ -462,7 +646,7 @@
               <span class="stars" aria-label="4.5 stars">★★★★</span>
               <span class="score">4.5</span>
             </div>
-            <div class="detail"><span class="pin">●</span><span>Carlton VIC</span></div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Carlton VIC</span></div>
             <div class="detail"><span class="clock">◷</span><span>Mon–Sat 8am–5pm</span></div>
             <div class="phone">03 9456 7890</div>
             <button class="website">View Listing</button>
@@ -512,7 +696,7 @@
               <span class="stars" aria-label="4.8 stars">★★★★</span>
               <span class="score">4.8</span>
             </div>
-            <div class="detail"><span class="pin">●</span><span>Fitzroy VIC</span></div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Fitzroy VIC</span></div>
             <div class="detail"><span class="clock">◷</span><span>Mon–Sat 7am–6pm</span></div>
             <div class="open-now">OPEN NOW</div>
             <div class="phone">03 9123 4567</div>
@@ -535,7 +719,7 @@
               <span class="stars" aria-label="4.6 stars">★★★★</span>
               <span class="score">4.6</span>
             </div>
-            <div class="detail"><span class="pin">●</span><span>Richmond VIC</span></div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Richmond VIC</span></div>
             <div class="detail"><span class="clock">◷</span><span>Mon–Fri 8am–5pm</span></div>
             <div class="open-now">OPEN NOW</div>
             <div class="phone">03 9234 5678</div>
@@ -558,7 +742,7 @@
               <span class="stars" aria-label="4.9 stars">★★★★</span>
               <span class="score">4.9</span>
             </div>
-            <div class="detail"><span class="pin">●</span><span>Collingwood VIC</span></div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Collingwood VIC</span></div>
             <div class="detail"><span class="clock">◷</span><span>24/7 Emergency</span></div>
             <div class="open-now">OPEN NOW</div>
             <div class="phone">03 9345 6789</div>
@@ -570,7 +754,7 @@
               <h2>City Pipe Solutions</h2>
             </div>
             <div class="category">Plumbing Services</div>
-            <div class="detail"><span class="pin">●</span><span>Carlton VIC</span></div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Carlton VIC</span></div>
             <div class="detail"><span class="clock">◷</span><span>Mon–Sat 8am–5pm</span></div>
             <div class="phone">03 9456 7890</div>
             <button class="website">View Listing</button>
@@ -581,7 +765,7 @@
               <h2>Inner North Plumbing</h2>
             </div>
             <div class="category">Plumbing Services</div>
-            <div class="detail"><span class="pin">●</span><span>Brunswick VIC</span></div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Brunswick VIC</span></div>
             <div class="detail"><span class="clock">◷</span><span>Mon–Fri 9am–5pm</span></div>
             <div class="phone">03 9567 8901</div>
             <button class="website">View Listing</button>
@@ -592,7 +776,7 @@
               <h2>Southbank Pipe Repairs</h2>
             </div>
             <div class="category">Pipe Repairs</div>
-            <div class="detail"><span class="pin">●</span><span>Southbank VIC</span></div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Southbank VIC</span></div>
             <div class="detail"><span class="clock">◷</span><span>Mon–Fri 8am–4pm</span></div>
             <div class="phone">03 9678 9012</div>
             <button class="website">View Listing</button>
@@ -641,7 +825,7 @@
               <span class="stars" aria-label="4.8 stars">★★★★</span>
               <span class="score">4.8</span>
             </div>
-            <div class="detail"><span class="pin">●</span><span>Fitzroy VIC</span></div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Fitzroy VIC</span></div>
             <div class="detail"><span class="clock">◷</span><span>Mon–Sat 7am–6pm</span></div>
             <div class="open-now">OPEN NOW</div>
             <div class="phone">03 9123 4567</div>
@@ -664,7 +848,7 @@
               <span class="stars" aria-label="4.6 stars">★★★★</span>
               <span class="score">4.6</span>
             </div>
-            <div class="detail"><span class="pin">●</span><span>Richmond VIC</span></div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Richmond VIC</span></div>
             <div class="detail"><span class="clock">◷</span><span>Mon–Fri 8am–5pm</span></div>
             <div class="open-now">OPEN NOW</div>
             <div class="phone">03 9234 5678</div>
@@ -687,7 +871,7 @@
               <span class="stars" aria-label="4.9 stars">★★★★</span>
               <span class="score">4.9</span>
             </div>
-            <div class="detail"><span class="pin">●</span><span>Collingwood VIC</span></div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Collingwood VIC</span></div>
             <div class="detail"><span class="clock">◷</span><span>24/7 Emergency</span></div>
             <div class="open-now">OPEN NOW</div>
             <div class="phone">03 9345 6789</div>
@@ -699,7 +883,7 @@
               <h2>City Pipe Solutions</h2>
             </div>
             <div class="category">Plumbing Services</div>
-            <div class="detail"><span class="pin">●</span><span>Carlton VIC</span></div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Carlton VIC</span></div>
             <div class="detail"><span class="clock">◷</span><span>Mon–Sat 8am–5pm</span></div>
             <div class="phone">03 9456 7890</div>
             <button class="website">View Listing</button>
@@ -710,7 +894,7 @@
               <h2>Inner North Plumbing</h2>
             </div>
             <div class="category">Plumbing Services</div>
-            <div class="detail"><span class="pin">●</span><span>Brunswick VIC</span></div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Brunswick VIC</span></div>
             <div class="detail"><span class="clock">◷</span><span>Mon–Fri 9am–5pm</span></div>
             <div class="phone">03 9567 8901</div>
             <button class="website">View Listing</button>
@@ -721,7 +905,7 @@
               <h2>Southbank Pipe Repairs</h2>
             </div>
             <div class="category">Pipe Repairs</div>
-            <div class="detail"><span class="pin">●</span><span>Southbank VIC</span></div>
+            <div class="detail"><img class="pin" src="https://i2.ypcdn.com/ypau/images/svgs/mappin-green.svg" alt="" /><span>Southbank VIC</span></div>
             <div class="detail"><span class="clock">◷</span><span>Mon–Fri 8am–4pm</span></div>
             <div class="phone">03 9678 9012</div>
             <button class="website">View Listing</button>
